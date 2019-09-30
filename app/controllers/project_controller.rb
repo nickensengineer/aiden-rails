@@ -1,5 +1,6 @@
 class ProjectController < ApplicationController
   def index
+    @projects = Project.all
     @project = Project.new
   end
 
@@ -17,8 +18,8 @@ class ProjectController < ApplicationController
 
   private
 
-    def project_params
-      params.require(:project).permit(:name, :description)
-    end
-
+  def project_params
+    params.require(:project).permit(:name, :description)
   end
+
+end

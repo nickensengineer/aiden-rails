@@ -20,6 +20,9 @@ class ProjectController < ApplicationController
     @project = Project.find(params[:id])
   end
 
+  def chat
+    @project = Project.find(params[:id])
+  end
   private
 
   def project_params

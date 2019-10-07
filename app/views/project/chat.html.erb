@@ -6,7 +6,6 @@
         <%= render "message/message.html", message: m %>
       <% end %>
     </div>
-
     <%= form_for @message, html: {id: "new-message-form", class: "chat-form"} do |f| %>
       <%= f.hidden_field :project_id, value: @project.id %>
       <div class="form-group">

@@ -1,3 +1,4 @@
+
 class ProjectController < ApplicationController
   def index
     @projects = Project.all
@@ -21,12 +22,14 @@ class ProjectController < ApplicationController
   end
 
   def chat
+    @message = Message.new
+    @messages = Message.where project_id: params[:id]
     @project = Project.find(params[:id])
   end
+
   private
 
   def project_params
     params.require(:project).permit(:name, :description)
   end
-
 end
